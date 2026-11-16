@@ -1,0 +1,520 @@
+{
+  "n_quads": 101,
+  "n_components": 1037,
+  "duplicate_brand_model_rows": 0,
+  "descriptives": [
+    {
+      "variable": "prop_size_in",
+      "n": 101,
+      "missing": 0,
+      "mean": 3.083,
+      "sd": 1.452,
+      "min": 1.2,
+      "p10": 1.6,
+      "p25": 2.0,
+      "median": 2.5,
+      "p75": 4.0,
+      "p90": 5.1,
+      "max": 7.5,
+      "cv_pct": 47.087,
+      "iqr_outliers": 1,
+      "robust_outliers_3.5": 1,
+      "skew": 0.854,
+      "kurtosis": -0.057
+    },
+    {
+      "variable": "wheelbase_mm",
+      "n": 75,
+      "missing": 26,
+      "mean": 142.789,
+      "sd": 66.878,
+      "min": 65.0,
+      "p10": 75.4,
+      "p25": 87.0,
+      "median": 123.0,
+      "p75": 176.0,
+      "p90": 238.6,
+      "max": 336.0,
+      "cv_pct": 46.836,
+      "iqr_outliers": 2,
+      "robust_outliers_3.5": 0,
+      "skew": 0.926,
+      "kurtosis": 0.089
+    },
+    {
+      "variable": "cells",
+      "n": 101,
+      "missing": 0,
+      "mean": 3.535,
+      "sd": 1.863,
+      "min": 1.0,
+      "p10": 1.0,
+      "p25": 2.0,
+      "median": 4.0,
+      "p75": 6.0,
+      "p90": 6.0,
+      "max": 6.0,
+      "cv_pct": 52.711,
+      "iqr_outliers": 0,
+      "robust_outliers_3.5": 0,
+      "skew": -0.003,
+      "kurtosis": -1.343
+    },
+    {
+      "variable": "capacity_mah",
+      "n": 101,
+      "missing": 0,
+      "mean": 1081.139,
+      "sd": 1177.058,
+      "min": 300.0,
+      "p10": 450.0,
+      "p25": 450.0,
+      "median": 850.0,
+      "p75": 1300.0,
+      "p90": 1435.0,
+      "max": 8000.0,
+      "cv_pct": 108.872,
+      "iqr_outliers": 6,
+      "robust_outliers_3.5": 5,
+      "skew": 4.448,
+      "kurtosis": 23.184
+    },
+    {
+      "variable": "motor_kv",
+      "n": 91,
+      "missing": 10,
+      "mean": 8089.121,
+      "sd": 7202.029,
+      "min": 1250.0,
+      "p10": 1800.0,
+      "p25": 2375.0,
+      "median": 4600.0,
+      "p75": 14000.0,
+      "p90": 19000.0,
+      "max": 28000.0,
+      "cv_pct": 89.034,
+      "iqr_outliers": 0,
+      "robust_outliers_3.5": 9,
+      "skew": 1.072,
+      "kurtosis": 0.039
+    },
+    {
+      "variable": "battery_mass_g",
+      "n": 101,
+      "missing": 0,
+      "mean": 131.621,
+      "sd": 183.122,
+      "min": 8.0,
+      "p10": 12.7,
+      "p25": 27.0,
+      "median": 95.0,
+      "p75": 211.0,
+      "p90": 239.0,
+      "max": 1175.0,
+      "cv_pct": 139.129,
+      "iqr_outliers": 3,
+      "robust_outliers_3.5": 3,
+      "skew": 4.106,
+      "kurtosis": 20.713
+    },
+    {
+      "variable": "dry_mass_g",
+      "n": 101,
+      "missing": 0,
+      "mean": 190.862,
+      "sd": 202.065,
+      "min": 17.3,
+      "p10": 31.0,
+      "p25": 47.1,
+      "median": 141.0,
+      "p75": 265.0,
+      "p90": 424.0,
+      "max": 1466.0,
+      "cv_pct": 105.869,
+      "iqr_outliers": 3,
+      "robust_outliers_3.5": 3,
+      "skew": 3.033,
+      "kurtosis": 15.235
+    },
+    {
+      "variable": "auw_est_g",
+      "n": 101,
+      "missing": 0,
+      "mean": 322.483,
+      "sd": 367.412,
+      "min": 25.58,
+      "p10": 43.7,
+      "p25": 76.0,
+      "median": 245.4,
+      "p75": 476.0,
+      "p90": 656.4,
+      "max": 2211.0,
+      "cv_pct": 113.932,
+      "iqr_outliers": 3,
+      "robust_outliers_3.5": 3,
+      "skew": 2.982,
+      "kurtosis": 11.741
+    },
+    {
+      "variable": "energy_wh",
+      "n": 101,
+      "missing": 0,
+      "mean": 17.749,
+      "sd": 26.987,
+      "min": 1.11,
+      "p10": 1.665,
+      "p25": 3.33,
+      "median": 11.1,
+      "p75": 24.42,
+      "p90": 31.08,
+      "max": 177.6,
+      "cv_pct": 152.046,
+      "iqr_outliers": 3,
+      "robust_outliers_3.5": 3,
+      "skew": 4.48,
+      "kurtosis": 23.947
+    },
+    {
+      "variable": "disk_loading_kg_m2",
+      "n": 101,
+      "missing": 0,
+      "mean": 13.613,
+      "sd": 6.67,
+      "min": 3.07,
+      "p10": 6.938,
+      "p25": 8.764,
+      "median": 12.043,
+      "p75": 17.638,
+      "p90": 24.246,
+      "max": 31.823,
+      "cv_pct": 48.994,
+      "iqr_outliers": 2,
+      "robust_outliers_3.5": 2,
+      "skew": 1.022,
+      "kurtosis": 0.354
+    },
+    {
+      "variable": "battery_mass_fraction",
+      "n": 101,
+      "missing": 0,
+      "mean": 0.369,
+      "sd": 0.085,
+      "min": 0.204,
+      "p10": 0.269,
+      "p25": 0.32,
+      "median": 0.359,
+      "p75": 0.425,
+      "p90": 0.469,
+      "max": 0.628,
+      "cv_pct": 23.008,
+      "iqr_outliers": 3,
+      "robust_outliers_3.5": 2,
+      "skew": 0.689,
+      "kurtosis": 0.813
+    },
+    {
+      "variable": "specific_energy_wh_kg",
+      "n": 101,
+      "missing": 0,
+      "mean": 134.091,
+      "sd": 25.747,
+      "min": 101.939,
+      "p10": 114.364,
+      "p25": 116.842,
+      "median": 130.042,
+      "p75": 140.345,
+      "p90": 155.048,
+      "max": 279.447,
+      "cv_pct": 19.201,
+      "iqr_outliers": 6,
+      "robust_outliers_3.5": 4,
+      "skew": 2.877,
+      "kurtosis": 11.663
+    },
+    {
+      "variable": "power_to_weight_W_kg",
+      "n": 100,
+      "missing": 1,
+      "mean": 381.237,
+      "sd": 106.471,
+      "min": 138.39,
+      "p10": 260.22,
+      "p25": 326.894,
+      "median": 388.793,
+      "p75": 437.729,
+      "p90": 500.104,
+      "max": 747.475,
+      "cv_pct": 27.928,
+      "iqr_outliers": 7,
+      "robust_outliers_3.5": 2,
+      "skew": 0.296,
+      "kurtosis": 1.594
+    }
+  ],
+  "missing": [
+    {
+      "column": "auw_reported_g",
+      "missing_fraction": 0.6831683168316832,
+      "missing_count": 69
+    },
+    {
+      "column": "manufacturer_flight_time_min",
+      "missing_fraction": 0.5346534653465347,
+      "missing_count": 54
+    },
+    {
+      "column": "flight_controller",
+      "missing_fraction": 0.46534653465346537,
+      "missing_count": 47
+    },
+    {
+      "column": "log_wheelbase",
+      "missing_fraction": 0.25742574257425743,
+      "missing_count": 26
+    },
+    {
+      "column": "wheelbase_mm",
+      "missing_fraction": 0.25742574257425743,
+      "missing_count": 26
+    },
+    {
+      "column": "motor_kv",
+      "missing_fraction": 0.09900990099009901,
+      "missing_count": 10
+    },
+    {
+      "column": "motors",
+      "missing_fraction": 0.019801980198019802,
+      "missing_count": 2
+    },
+    {
+      "column": "typical_current_a",
+      "missing_fraction": 0.009900990099009901,
+      "missing_count": 1
+    },
+    {
+      "column": "power_to_weight_W_kg",
+      "missing_fraction": 0.009900990099009901,
+      "missing_count": 1
+    },
+    {
+      "column": "power_W",
+      "missing_fraction": 0.009900990099009901,
+      "missing_count": 1
+    },
+    {
+      "column": "disk_loading_kg_m2",
+      "missing_fraction": 0.0,
+      "missing_count": 0
+    },
+    {
+      "column": "disk_area_m2",
+      "missing_fraction": 0.0,
+      "missing_count": 0
+    },
+    {
+      "column": "prop_disk_area_single_m2",
+      "missing_fraction": 0.0,
+      "missing_count": 0
+    },
+    {
+      "column": "brand",
+      "missing_fraction": 0.0,
+      "missing_count": 0
+    },
+    {
+      "column": "battery_mass_fraction",
+      "missing_fraction": 0.0,
+      "missing_count": 0
+    },
+    {
+      "column": "dry_mass_fraction",
+      "missing_fraction": 0.0,
+      "missing_count": 0
+    },
+    {
+      "column": "auw_est_g",
+      "missing_fraction": 0.0,
+      "missing_count": 0
+    },
+    {
+      "column": "wheelbase_missing",
+      "missing_fraction": 0.0,
+      "missing_count": 0
+    },
+    {
+      "column": "specific_energy_wh_kg",
+      "missing_fraction": 0.0,
+      "missing_count": 0
+    },
+    {
+      "column": "battery_match_logdist",
+      "missing_fraction": 0.0,
+      "missing_count": 0
+    },
+    {
+      "column": "dry_mass_g",
+      "missing_fraction": 0.0,
+      "missing_count": 0
+    },
+    {
+      "column": "model",
+      "missing_fraction": 0.0,
+      "missing_count": 0
+    },
+    {
+      "column": "battery_mass_g",
+      "missing_fraction": 0.0,
+      "missing_count": 0
+    },
+    {
+      "column": "energy_wh",
+      "missing_fraction": 0.0,
+      "missing_count": 0
+    },
+    {
+      "column": "voltage_nominal_V",
+      "missing_fraction": 0.0,
+      "missing_count": 0
+    },
+    {
+      "column": "capacity_mah",
+      "missing_fraction": 0.0,
+      "missing_count": 0
+    },
+    {
+      "column": "cells",
+      "missing_fraction": 0.0,
+      "missing_count": 0
+    },
+    {
+      "column": "battery_chemistry",
+      "missing_fraction": 0.0,
+      "missing_count": 0
+    },
+    {
+      "column": "n_motors",
+      "missing_fraction": 0.0,
+      "missing_count": 0
+    },
+    {
+      "column": "prop_size_in",
+      "missing_fraction": 0.0,
+      "missing_count": 0
+    },
+    {
+      "column": "class_group",
+      "missing_fraction": 0.0,
+      "missing_count": 0
+    },
+    {
+      "column": "class",
+      "missing_fraction": 0.0,
+      "missing_count": 0
+    },
+    {
+      "column": "slug",
+      "missing_fraction": 0.0,
+      "missing_count": 0
+    },
+    {
+      "column": "sources",
+      "missing_fraction": 0.0,
+      "missing_count": 0
+    }
+  ],
+  "vif": [
+    {
+      "feature": "prop_size_in",
+      "VIF": 8.21
+    },
+    {
+      "feature": "cells",
+      "VIF": 6.54
+    },
+    {
+      "feature": "wheelbase_mm",
+      "VIF": 4.81
+    },
+    {
+      "feature": "motor_kv",
+      "VIF": 3.4
+    },
+    {
+      "feature": "capacity_mah",
+      "VIF": 1.93
+    }
+  ],
+  "allometric": {
+    "auw_vs_wheelbase": {
+      "x": "wheelbase_mm",
+      "y": "auw_est_g",
+      "n": 75,
+      "exponent": 2.286498770788441,
+      "exponent_se": 0.12378978301442975,
+      "r2": 0.8237443766389574,
+      "p_value": 3.1180524627654996e-29
+    },
+    "auw_vs_prop_size": {
+      "x": "prop_size_in",
+      "y": "auw_est_g",
+      "n": 101,
+      "exponent": 2.115755654738749,
+      "exponent_se": 0.10422308887810636,
+      "r2": 0.8063003259265176,
+      "p_value": 4.588073436389833e-37
+    },
+    "dry_vs_wheelbase": {
+      "x": "wheelbase_mm",
+      "y": "dry_mass_g",
+      "n": 75,
+      "exponent": 2.1452035695794285,
+      "exponent_se": 0.12056498326185577,
+      "r2": 0.812622632780209,
+      "p_value": 2.9288480181019682e-28
+    },
+    "dry_vs_prop_size": {
+      "x": "prop_size_in",
+      "y": "dry_mass_g",
+      "n": 101,
+      "exponent": 1.9738813283647594,
+      "exponent_se": 0.10283216041593866,
+      "r2": 0.7882147943699245,
+      "p_value": 3.849361408030323e-35
+    }
+  },
+  "battery_mass_model": {
+    "slope_g_per_Wh": 5.678128678609066,
+    "intercept_g": 25.197082345864786,
+    "r2": 0.9720026592845428,
+    "median_specific_energy_wh_kg": 137.82271944922547
+  },
+  "top_pearson_with_auw": {
+    "dry_mass_g": 0.958,
+    "battery_mass_g": 0.949,
+    "energy_wh": 0.916,
+    "wheelbase_mm": 0.861,
+    "capacity_mah": 0.857,
+    "prop_size_in": 0.825,
+    "cells": 0.716,
+    "battery_mass_fraction": 0.412,
+    "disk_loading_kg_m2": 0.371,
+    "specific_energy_wh_kg": -0.026,
+    "power_to_weight_W_kg": -0.16,
+    "motor_kv": -0.587
+  },
+  "top_spearman_with_auw": {
+    "dry_mass_g": 0.991,
+    "battery_mass_g": 0.981,
+    "energy_wh": 0.97,
+    "cells": 0.953,
+    "wheelbase_mm": 0.913,
+    "prop_size_in": 0.905,
+    "capacity_mah": 0.892,
+    "disk_loading_kg_m2": 0.534,
+    "battery_mass_fraction": 0.466,
+    "power_to_weight_W_kg": 0.055,
+    "specific_energy_wh_kg": -0.203,
+    "motor_kv": -0.945
+  }
+}

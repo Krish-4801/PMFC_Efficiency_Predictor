@@ -1,0 +1,116 @@
+{
+  "dataset": {
+    "name": "FPV-DB: open dataset of FPV drone component specifications",
+    "publisher": "FPV-DB / Zenodo",
+    "doi": "10.5281/zenodo.23613812",
+    "url": "https://github.com/fpvdb/fpv-db-data",
+    "license": "CC BY 4.0",
+    "accessed": "2026-11-16",
+    "tables": {
+      "quads": "quads.csv",
+      "motors": "motors.csv",
+      "batteries": "batteries.csv",
+      "props": "props.csv",
+      "stacks": "stacks.csv",
+      "cameras": "cameras.csv",
+      "vtx": "vtx.csv"
+    }
+  },
+  "tables": {
+    "quad_design_table": {
+      "rows": 101,
+      "columns": 34,
+      "duplicate_rows": 0,
+      "missing_fraction": {
+        "motors": 0.0198,
+        "motor_kv": 0.099,
+        "wheelbase_mm": 0.2574,
+        "flight_controller": 0.4653,
+        "auw_reported_g": 0.6832,
+        "typical_current_a": 0.0099,
+        "manufacturer_flight_time_min": 0.5347,
+        "power_W": 0.0099,
+        "power_to_weight_W_kg": 0.0099,
+        "log_wheelbase": 0.2574
+      }
+    },
+    "thrust_bench": {
+      "rows": 5627,
+      "columns": 19,
+      "duplicate_rows": 0,
+      "missing_fraction": {
+        "prop_blades": 0.3505,
+        "cells": 0.0128,
+        "voltage_V": 0.0039,
+        "current_A": 0.002,
+        "efficiency_g_per_W": 0.0025,
+        "cells_n": 0.0128,
+        "prop_diameter_in": 0.1782,
+        "prop_pitch_in": 0.4406
+      }
+    },
+    "propulsion_groups": {
+      "rows": 392,
+      "columns": 21,
+      "duplicate_rows": 0,
+      "missing_fraction": {
+        "prop_pitch_in": 0.3699
+      }
+    },
+    "battery_catalog": {
+      "rows": 326,
+      "columns": 16,
+      "duplicate_rows": 0,
+      "missing_fraction": {
+        "dimensions_mm": 0.1104,
+        "price_per_wh_usd": 0.0031,
+        "price_usd": 0.0031,
+        "note": 0.8773
+      }
+    },
+    "component_catalog": {
+      "rows": 1037,
+      "columns": 6,
+      "duplicate_rows": 0,
+      "missing_fraction": {
+        "detail": 0.2083
+      }
+    }
+  },
+  "weight_formula_validation": {
+    "formula": "AUW = dry_mass (frame+motors+props+avionics) + battery_mass",
+    "n_reported_auw": 32,
+    "mae_g": 22.23,
+    "mape_pct": 7.451,
+    "bias_g": 19.4,
+    "r2": 0.9689,
+    "note": "Battery mass is matched from the pack catalogue by cell count and nearest capacity; reported AUW is the manufacturer figure."
+  },
+  "physics_checks": {
+    "battery_energy_vs_capacity_median_abs_err_wh": 0.0395,
+    "disk_loading_kg_m2": {
+      "median": 12.043,
+      "p10": 6.938,
+      "p90": 24.246
+    },
+    "battery_mass_fraction": {
+      "median": 0.359,
+      "p10": 0.269,
+      "p90": 0.469
+    }
+  },
+  "prop_mass_model": {
+    "n": 195,
+    "cv_r2": 0.9013344963610764,
+    "cv_mae_g": 1.7622713376317278
+  },
+  "propulsion_groups": {
+    "n_groups": 392,
+    "n_motors": 93,
+    "n_props": 136,
+    "max_thrust_range_g": [
+      38.6,
+      6837.0
+    ]
+  }
+}

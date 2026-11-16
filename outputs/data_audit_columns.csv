@@ -1,0 +1,121 @@
+file,sheet,column,dtype,non_null
+pmfc_fuel_cell.xlsx,data,Unnamed: 0,object,62
+pmfc_fuel_cell.xlsx,data,current_density,object,14219
+pmfc_fuel_cell.xlsx,data,cell_voltage_001,object,14219
+pmfc_fuel_cell.xlsx,data,Unnamed: 3,object,63
+pmfc_fuel_cell.xlsx,data,Unnamed: 4,object,62
+pmfc_fuel_cell.xlsx,data,Unnamed: 5,object,62
+pmfc_fuel_cell.xlsx,data,Unnamed: 6,float64,0
+pmfc_fuel_cell.xlsx,data,Unnamed: 7,object,14219
+pmfc_fuel_cell.xlsx,data,Unnamed: 8,object,64
+pmfc_fuel_cell.xlsx,data,Unnamed: 9,object,64
+pmfc_fuel_cell.xlsx,data,Unnamed: 10,object,14219
+pmfc_fuel_cell.xlsx,data,Unnamed: 11,object,64
+pmfc_fuel_cell.xlsx,data,Unnamed: 12,object,64
+pmfc_fuel_cell.xlsx,data,Unnamed: 13,float64,0
+pmfc_fuel_cell.xlsx,data,Unnamed: 14,float64,0
+pmfc_fuel_cell.xlsx,data,Beginning of the active area,object,14219
+pmfc_fuel_cell.xlsx,data,Middle of the active area,object,14219
+pmfc_fuel_cell.xlsx,data,End of the active area,object,14219
+pmfc_fuel_cell.xlsx,data,Unnamed: 18,float64,14186
+pmfc_fuel_cell.xlsx,data,Unnamed: 19,float64,14186
+pmfc_fuel_cell.xlsx,data,Unnamed: 20,float64,14186
+pmfc_fuel_cell.xlsx,data,Unnamed: 21,object,14187
+pmfc_fuel_cell.xlsx,data,Unnamed: 22,object,14187
+pmfc_fuel_cell.xlsx,data,Unnamed: 23,float64,0
+pmfc_fuel_cell.xlsx,data,Unnamed: 24,float64,0
+pmfc_fuel_cell.xlsx,data,Beginning of the active area.1,object,14219
+pmfc_fuel_cell.xlsx,data,Middle of the active area.1,object,14219
+pmfc_fuel_cell.xlsx,data,End of the active area.1,object,14219
+pmfc_fuel_cell.xlsx,data,Unnamed: 28,float64,14186
+pmfc_fuel_cell.xlsx,data,Unnamed: 29,float64,14186
+pmfc_fuel_cell.xlsx,data,Unnamed: 30,float64,14186
+pmfc_fuel_cell.xlsx,data,Unnamed: 31,object,14187
+pmfc_fuel_cell.xlsx,data,Unnamed: 32,object,14187
+pmfc_fuel_cell.xlsx,data,Unnamed: 33,float64,0
+pmfc_fuel_cell.xlsx,data,Unnamed: 34,float64,0
+pmfc_fuel_cell.xlsx,data,Unnamed: 35,float64,0
+pmfc_fuel_cell.xlsx,data,Unnamed: 36,float64,0
+pmfc_fuel_cell.xlsx,data,600,float64,53
+pmfc_fuel_cell.xlsx,data,598.6800000000001,float64,53
+pmfc_fuel_cell.xlsx,data,0.7610000000000002,float64,53
+pmfc_fuel_cell.xlsx,data,nan,float64,52
+pmfc_fuel_cell.xlsx,data,0.3170840166853061,float64,53
+pmfc_fuel_cell.xlsx,data,0.49495867741935784,float64,53
+pmfc_fuel_cell.xlsx,data,0.06659827567820026,float64,53
+pmfc_fuel_cell.xlsx,data,1.142745096774195,float64,53
+pmfc_fuel_cell.xlsx,data,0.09260797368067374,float64,53
+pmfc_fuel_cell.xlsx,data,Unnamed: 46,float64,0
+pmfc_fuel_cell.xlsx,data,79.98369605798932,float64,53
+pmfc_fuel_cell.xlsx,data,0.07697951486400001,float64,53
+pmfc_fuel_cell.xlsx,data,Unnamed: 49,float64,0
+pmfc_fuel_cell.xlsx,data,79.98123990066756,float64,53
+pmfc_fuel_cell.xlsx,data,0.17489459315867606,float64,53
+pmfc_fuel_cell.xlsx,votage_magnification,Unnamed: 0,float64,301
+pmfc_fuel_cell.xlsx,votage_magnification,Unnamed: 1,object,303
+pmfc_fuel_cell.xlsx,votage_magnification,Unnamed: 2,object,303
+pmfc_fuel_cell.xlsx,votage_magnification,Unnamed: 3,float64,0
+pmfc_fuel_cell.xlsx,votage_magnification,Unnamed: 4,object,303
+pmfc_fuel_cell.xlsx,votage_magnification,Unnamed: 5,object,304
+pmfc_fuel_cell.xlsx,votage_magnification,Unnamed: 6,float64,0
+pmfc_fuel_cell.xlsx,votage_magnification,Unnamed: 7,object,303
+pmfc_fuel_cell.xlsx,votage_magnification,Unnamed: 8,object,304
+pmfc_fuel_cell.xlsx,votage_magnification,Unnamed: 9,float64,0
+pmfc_fuel_cell.xlsx,votage_magnification,Unnamed: 10,object,303
+pmfc_fuel_cell.xlsx,votage_magnification,Unnamed: 11,object,304
+pmfc_fuel_cell.xlsx,votage_magnification,Unnamed: 12,float64,0
+pmfc_fuel_cell.xlsx,votage_magnification,Unnamed: 13,object,303
+pmfc_fuel_cell.xlsx,votage_magnification,Unnamed: 14,object,304
+pmfc_fuel_cell.xlsx,votage_magnification,Unnamed: 15,float64,0
+pmfc_fuel_cell.xlsx,votage_magnification,Unnamed: 16,object,303
+pmfc_fuel_cell.xlsx,votage_magnification,Unnamed: 17,object,304
+pmfc_fuel_cell.xlsx,EIS_data,0.5,float64,6
+pmfc_fuel_cell.xlsx,EIS_data, A cm-2,object,202
+pmfc_fuel_cell.xlsx,EIS_data,Unnamed: 2,object,196
+pmfc_fuel_cell.xlsx,EIS_data,Unnamed: 3,object,196
+pmfc_fuel_cell.xlsx,EIS_data,Unnamed: 4,object,196
+pmfc_fuel_cell.xlsx,EIS_data,Unnamed: 5,object,196
+pmfc_fuel_cell.xlsx,EIS_data,Unnamed: 6,object,196
+pmfc_fuel_cell.xlsx,EIS_data,Unnamed: 7,object,196
+pmfc_fuel_cell.xlsx,EIS_data,Unnamed: 8,object,196
+pmfc_fuel_cell.xlsx,EIS_data,Unnamed: 9,object,196
+pmfc_fuel_cell.xlsx,EIS_data,Unnamed: 10,object,196
+pmfc_fuel_cell.xlsx,EIS_data,Unnamed: 11,object,196
+pmfc_fuel_cell.xlsx,EIS_data,Unnamed: 12,float64,0
+pmfc_fuel_cell.xlsx,EIS_data,Unnamed: 13,float64,0
+pmfc_fuel_cell.xlsx,EIS_data,Unnamed: 14,float64,0
+pmfc_fuel_cell.xlsx,EIS_data,0.5 A cm-2,object,188
+pmfc_fuel_cell.xlsx,EIS_data,10,float64,188
+pmfc_fuel_cell.xlsx,EIS_data,Unnamed: 17,object,213
+pmfc_fuel_cell.xlsx,EIS_data,0.5 A cm-2 JRC,object,185
+pmfc_fuel_cell.xlsx,EIS_data,Unnamed: 19,object,184
+pmfc_fuel_cell.xlsx,EIS_data,Unnamed: 20,str,1
+pemfc_efficiency_clean.xlsx,Notes,"PEMFC Efficiency Dataset — Cleaning, Feature Selection & Target Construction Notes",str,26
+pemfc_efficiency_clean.xlsx,Assumptions,PEMFC Voltage-Efficiency Model — Assumptions,str,5
+pemfc_efficiency_clean.xlsx,Assumptions,Unnamed: 1,object,4
+pemfc_efficiency_clean.xlsx,Assumptions,Unnamed: 2,str,4
+pemfc_efficiency_clean.xlsx,Clean_Data,current_density_mA_cm2,float64,14217
+pemfc_efficiency_clean.xlsx,Clean_Data,cell_voltage_V,float64,14217
+pemfc_efficiency_clean.xlsx,Clean_Data,cathode_pressure_diff_kPa,float64,14217
+pemfc_efficiency_clean.xlsx,Clean_Data,anode_pressure_diff_kPa,float64,14217
+pemfc_efficiency_clean.xlsx,Clean_Data,anode_temp_beginning_C,float64,14217
+pemfc_efficiency_clean.xlsx,Clean_Data,anode_temp_middle_C,float64,14217
+pemfc_efficiency_clean.xlsx,Clean_Data,anode_temp_end_C,float64,14217
+pemfc_efficiency_clean.xlsx,Clean_Data,cathode_temp_beginning_C,float64,14217
+pemfc_efficiency_clean.xlsx,Clean_Data,cathode_temp_middle_C,float64,14217
+pemfc_efficiency_clean.xlsx,Clean_Data,cathode_temp_end_C,float64,14217
+pemfc_efficiency_clean.xlsx,Clean_Data,anode_avg_temp_C,float64,14217
+pemfc_efficiency_clean.xlsx,Clean_Data,cathode_avg_temp_C,float64,14217
+pemfc_efficiency_clean.xlsx,Clean_Data,cell_avg_temp_C,float64,14217
+pemfc_efficiency_clean.xlsx,Clean_Data,reversible_voltage_V,float64,14217
+pemfc_efficiency_clean.xlsx,Clean_Data,voltage_efficiency_pct,float64,14217
+pemfc_efficiency_clean.xlsx,Feature_Selection,Correlation matrix (Pearson r) — candidate features vs voltage_efficiency_pct target,str,10
+pemfc_efficiency_clean.xlsx,Feature_Selection,Unnamed: 1,object,10
+pemfc_efficiency_clean.xlsx,Feature_Selection,Unnamed: 2,object,10
+pemfc_efficiency_clean.xlsx,Feature_Selection,Unnamed: 3,object,10
+pemfc_efficiency_clean.xlsx,Feature_Selection,Unnamed: 4,object,10
+pemfc_efficiency_clean.xlsx,Feature_Selection,Unnamed: 5,object,10
+pemfc_efficiency_clean.xlsx,Feature_Selection,Unnamed: 6,object,10
+pemfc_efficiency_clean.xlsx,Feature_Selection,Unnamed: 7,object,10
+pemfc_efficiency_clean.xlsx,Feature_Selection,Unnamed: 8,object,10
+pemfc_efficiency_clean.xlsx,Feature_Selection,Unnamed: 9,object,10

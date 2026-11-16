@@ -9,6 +9,13 @@ An end-to-end Machine Learning pipeline to predict the **Voltage Efficiency** ($
 
 This repository contains the complete workflow: **Exploratory Data Analysis (EDA)**, **leak-free preprocessing**, **5-fold RandomizedSearchCV & LOOCV evaluation**, and **Stacked Ensemble Regression** combining `XGBoost`, `SVR`, and `Random Forest` with both continuous (**Ridge**) and discretized classification-wrapped (**Logistic Regression**) meta-learners.
 
+> **Repository now contains two components.**
+> The PEMFC efficiency pipeline above is unchanged. A second component —
+> **[Drone Weight Optimization](#-drone-weight-optimization-component)** — is included
+> under `src/`, `notebooks/`, `reports/` and `outputs/drone_weight/`.
+> It uses a separate, openly licensed UAV component dataset because the PEMFC data
+> contains no mass, thrust or payload variables (verified in `outputs/data_audit.json`).
+
 ---
 
 ## 📌 Table of Contents
@@ -277,6 +284,185 @@ jupyter notebook pemfc_efficiency_pipeline.ipynb
 
 1. **Sensor Reduction for Edge Hardware**: In automotive ECUs and embedded microcontrollers with limited analog input channels, differential pressure transducers can be omitted. `current_density` accounts for $>60\%$ of importance and is $r=0.99$ collinear with pressure drops.
 2. **Meta-Learner Architecture**: Continuous linear blending (**Ridge Regression**) is strongly recommended over discrete classification wrappers for continuous fuel cell efficiency modeling because it avoids bin quantization error.
+
+---
+
+## 🚁 Drone Weight Optimization Component
+
+This is the previously incomplete part of the project. It is a self-contained,
+reproducible engineering optimization study: real component data → EDA → model
+benchmark → constrained minimum-weight design → algorithm benchmark → validation.
+
+### Why a separate UAV dataset
+
+An audit of both PEMFC workbooks (`audit_dataset.py` → `outputs/data_audit.json`)
+found **zero** columns containing mass, weight, thrust, payload, battery, motor,
+propeller, frame, endurance or power density. The project's own `Notes` sheet states
+that drone power/weight optimisation *"needs a second, separate dataset"*. Rather than
+inventing component masses, this component uses the open **FPV-DB** catalogue
+(CC BY 4.0, DOI [10.5281/zenodo.23613812](https://doi.org/10.5281/zenodo.23613812)):
+
+| table | rows | content |
+|---|---|---|
+| quads | 101 | assembled quadrotors, dry mass, AUW, wheelbase, prop size |
+| motors | 199 | mass, stator, KV, max cells + **6,786 measured thrust-bench rows** |
+| batteries | 326 | capacity, cells, energy, mass, C-rating |
+| props | 195 | diameter, pitch, blades, mass |
+| stacks / cameras / vtx | 112 / 52 / 169 | avionics masses |
+
+### Verified weight model
+
+```
+W_AUW = W_dry + W_battery
+W_dry = W_frame + 4·W_motor + 4·W_prop + W_avionics      (measured per aircraft)
+W_battery = 5.678 g/Wh · E + 25.20 g                     (R² = 0.972, n = 326)
+```
+
+`W_battery` is matched from the pack catalogue by cell count and nearest capacity.
+Validated on the **32 aircraft with a published AUW**:
+
+| MAE | MAPE | R² | bias |
+|---|---|---|---|
+| **22.2 g** | **7.45 %** | **0.969** | +19.4 g |
+
+### EDA highlights
+
+* AUW spans **25.6–2,211 g** (median 245 g); mass variables are strongly right-skewed.
+* Strongest correlates: dry mass 0.958, battery mass 0.949, energy 0.916, wheelbase 0.861,
+  prop size 0.825. Motor KV is *negatively* correlated (−0.59) because it marks vehicle class.
+* Allometric exponents: AUW ∝ wheelbase^2.29, AUW ∝ prop^2.12 (area-like, not cubic).
+* VIF: prop size 8.2, cells 6.5, wheelbase 4.8 → regularisation required for linear models.
+* Battery is the largest controllable mass (median **36 %** of AUW).
+* Full narrative: [`reports/eda_observations.md`](reports/eda_observations.md).
+
+### Model benchmark (total AUW, n = 101)
+
+80/20 hold-out; tuning inside the training split; `RepeatedKFold(5×5)` for stability.
+
+| # | model | test R² | MAE (g) | RMSE (g) | MAPE (%) | CV R² |
+|---|---|---|---|---|---|---|
+| 1 | Linear Regression | 0.980 | 45.5 | **58.3** | 60.0 | **0.902 ± 0.074** |
+| 2 | CatBoost | 0.976 | **39.4** | 63.4 | **20.6** | 0.847 ± 0.170 |
+| 3 | XGBoost | 0.974 | 45.2 | 67.0 | 41.3 | 0.837 ± 0.171 |
+| 4 | Gradient Boosting | 0.972 | 40.4 | 69.3 | 20.0 | 0.822 ± 0.180 |
+| 5 | Random Forest | 0.968 | 46.2 | 73.9 | 26.2 | 0.814 ± 0.177 |
+| 6 | Extra Trees | 0.964 | 47.5 | 78.6 | 25.1 | 0.861 ± 0.129 |
+| 7 | Lasso | 0.962 | 59.6 | 81.0 | 60.2 | 0.880 ± 0.089 |
+| 8 | Ridge | 0.960 | 55.5 | 82.4 | 49.9 | 0.869 ± 0.096 |
+| 9 | MLP (32-32) | 0.905 | 79.4 | 127.4 | 44.6 | 0.803 ± 0.127 |
+| 10 | SVR (RBF) | 0.540 | 96.0 | 280.2 | 30.5 | 0.668 ± 0.247 |
+
+The test R² is optimistic; the repeated-CV column is the honest estimate. With 101 samples,
+linear regression is the most stable and neural networks are not supported.
+
+### Optimization formulation
+
+Decision variables: propulsion group *i* (motor + prop + cells, 392 measured groups),
+battery pack *j* (326 packs, cell-matched), parallel packs *n* ∈ {1,2,3}.
+
+```
+min  W_total = W_airframe + 4(m_motor,i + m_prop,i) + n·m_batt,j + m_payload
+
+s.t. C1  4·T_max,i / W_total >= 2.0                      static thrust-to-weight
+     C2  60·n·E_j·η / P_h >= t_req,
+         P_h = 4·V_i·I_i(W_total/4)                      hover endurance (measured current)
+     C3  D_min <= D_i <= D_max                            prop/frame compatibility
+     C4  S_i <= S_max,i                                   voltage limit
+     C5  I_h <= n·C_rate,j·C_j/1000                       discharge limit
+     C6  W_total <= 2500 g                                extrapolation cap
+```
+
+`η = 0.80` usable depth of discharge is a stated assumption. `W_airframe` is an **explicit
+design input** because the dataset has no bare-frame column; it is varied by ±30 % in the
+sensitivity study. `T_max` and `I(T)` come from measured bench tables, not from a model.
+The full derivation is in [`reports/METHODOLOGY.md`](reports/METHODOLOGY.md).
+
+### Results
+
+| scenario | optimum AUW | TWR | endurance | vs median feasible build | vs real aircraft + payload |
+|---|---|---|---|---|---|
+| 3-inch | **460.1 g** | 3.04 | 8.6 min | −43.4 % | +1.4 % (n=35) |
+| 5-inch | **1,138.5 g** | 3.34 | 11.3 min | −31.8 % | −1.3 % (n=17) |
+| 7-inch | **1,715.7 g** | 4.93 | 12.4 min | −22.0 % | −35.2 % (n=2) |
+
+The first baseline is a typical *feasible catalogue combination* and is heavily
+over-provisioned; the second is a real aircraft of the same prop class plus the same
+payload. Both are reported so the saving is not overstated.
+
+### Algorithm comparison
+
+Exhaustive enumeration over 8k–47k candidate designs is tractable (<1 s) and gives the
+**certified global optimum**, so it is the recommended method. Six metaheuristics were
+still benchmarked (8 seeds × 1,200 evaluations):
+
+| algorithm | best feasible (g) | mean (g) | SD (g) | success vs optimum | gap | time (s) |
+|---|---|---|---|---|---|---|
+| Genetic Algorithm | 1,106.4 | 1,197.5 | 66.2 | 0.17 | 0.35 % | 0.07 |
+| Bayesian (TPE) | 1,106.4 | 1,189.1 | 49.1 | 0.21 | 0.35 % | 2.96 |
+| Random Search | 1,121.6 | 1,180.4 | 44.3 | 0.08 | 1.81 % | 0.05 |
+| Particle Swarm | 1,125.0 | 1,204.8 | 50.7 | 0.08 | 1.98 % | 0.06 |
+| Differential Evolution | 1,149.0 | 1,208.4 | 36.1 | 0.08 | 4.09 % | 0.09 |
+| Grid Search | 1,243.2 | 1,243.2 | 0.0 | 0.00 | 15.60 % | 0.01 |
+
+### Sensitivity (5-inch)
+
+* Payload dominates: 0 g → 474 g, 500 g → 1,139 g, 1,500 g → 2,479 g (super-linear).
+* Endurance: 5 min → 980 g, 12 min → 1,142 g, 20 min → 1,776 g (convex; steep above ~12 min).
+* TWR 1.5 → 3.0 leaves the optimum unchanged (selected design already has TWR 3.34):
+  **energy, not thrust, is the binding constraint** at this payload.
+* Airframe mass ±30 % shifts the optimum 1,017–1,212 g, essentially one-for-one.
+
+### Deliverables map
+
+| deliverable | location |
+|---|---|
+| Drone EDA notebook (executed) | `notebooks/01_drone_weight_eda.ipynb` |
+| Modelling notebook (executed) | `notebooks/02_drone_weight_modeling.ipynb` |
+| Optimization notebook (executed) | `notebooks/03_drone_weight_optimization.ipynb` |
+| Preprocessing pipeline | `src/data_pipeline.py`, `data/download_data.py` |
+| Model benchmark table | `outputs/drone_weight/model_benchmark.csv` |
+| Optimization implementation | `src/optimization.py` |
+| Algorithm comparison table | `outputs/drone_weight/algorithm_comparison.csv` |
+| Optimized component weights | `outputs/drone_weight/optimized_component_weights.csv` |
+| Original vs optimized | `outputs/drone_weight/figures/original_vs_optimized.png` |
+| Convergence plots | `outputs/drone_weight/figures/convergence_curves.png` |
+| Sensitivity plots | `outputs/drone_weight/figures/sensitivity_analysis.png` |
+| Feasibility / trade-off plots | `outputs/drone_weight/figures/constraint_feasibility.png` |
+| Methodology and mathematics | `reports/METHODOLOGY.md` |
+| Research references (DOI-verified) | `reports/REFERENCES.md` |
+| Data audit (why PEMFC data is unusable) | `outputs/data_audit.json` |
+
+### How to run
+
+```bash
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+
+# macOS only: XGBoost needs the OpenMP runtime
+# brew install libomp
+
+python data/download_data.py     # fetch FPV-DB and verify SHA-256
+python run_all.py                # pipeline -> EDA -> models -> optimization -> figures
+```
+
+Expected runtime: ~1 min for EDA, ~2 min for the model benchmark, ~2.5 min for the
+optimization (6 algorithms × 8 seeds × 3 scenarios). Everything is seeded (`random_state=42`).
+
+To regenerate the executed notebooks:
+
+```bash
+python notebooks/build_notebooks.py
+```
+
+### Limitations
+
+1. Bare-frame mass is not in the dataset; it is a documented input with ±30 % sensitivity.
+2. Usable battery fraction η = 0.80 is an assumption; endurance scales linearly with it.
+3. Bench thrust/current are steady-state at fixed voltage (no sag, heating or ESC losses).
+4. Payload is additive and drives C1/C2, but there is no numeric payload column to calibrate
+   a payload-dependent mass cascade.
+5. The catalogue is FPV/hobby class (≤ 2.2 kg); C6 caps results at 2.5 kg.
+6. No structural stress/fatigue model is possible with these fields.
 
 ---
 

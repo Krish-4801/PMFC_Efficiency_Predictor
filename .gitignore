@@ -1,0 +1,22 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Downloaded data (regenerate with data/download_data.py)
+data/raw/*.csv
+data/raw/*.md
+data/raw/LICENSE
+data/raw/PROVENANCE.json
+
+# Large regenerable intermediates (run_all.py recreates them)
+outputs/drone_weight/all_designs_*.csv
+outputs/drone_weight/fitted_models.joblib
+outputs/drone_weight/model_benchmark_notebook.csv
+
+# Large executed notebooks are kept; checkpoints are not
+notebooks/*.nbconvert.ipynb
+
+# OS
+.DS_Store

@@ -1,0 +1,249 @@
+{
+  "files": {
+    "pmfc_fuel_cell.xlsx": {
+      "sheets": {
+        "data": {
+          "shape": [
+            14219,
+            52
+          ],
+          "n_columns": 52,
+          "columns": [
+            "Unnamed: 0",
+            "current_density",
+            "cell_voltage_001",
+            "Unnamed: 3",
+            "Unnamed: 4",
+            "Unnamed: 5",
+            "Unnamed: 6",
+            "Unnamed: 7",
+            "Unnamed: 8",
+            "Unnamed: 9",
+            "Unnamed: 10",
+            "Unnamed: 11",
+            "Unnamed: 12",
+            "Unnamed: 13",
+            "Unnamed: 14",
+            "Beginning of the active area",
+            "Middle of the active area",
+            "End of the active area",
+            "Unnamed: 18",
+            "Unnamed: 19",
+            "Unnamed: 20",
+            "Unnamed: 21",
+            "Unnamed: 22",
+            "Unnamed: 23",
+            "Unnamed: 24",
+            "Beginning of the active area.1",
+            "Middle of the active area.1",
+            "End of the active area.1",
+            "Unnamed: 28",
+            "Unnamed: 29",
+            "Unnamed: 30",
+            "Unnamed: 31",
+            "Unnamed: 32",
+            "Unnamed: 33",
+            "Unnamed: 34",
+            "Unnamed: 35",
+            "Unnamed: 36",
+            "600",
+            "598.6800000000001",
+            "0.7610000000000002",
+            "nan",
+            "0.3170840166853061",
+            "0.49495867741935784",
+            "0.06659827567820026",
+            "1.142745096774195",
+            "0.09260797368067374",
+            "Unnamed: 46",
+            "79.98369605798932",
+            "0.07697951486400001",
+            "Unnamed: 49",
+            "79.98123990066756",
+            "0.17489459315867606"
+          ]
+        },
+        "votage_magnification": {
+          "shape": [
+            308,
+            18
+          ],
+          "n_columns": 18,
+          "columns": [
+            "Unnamed: 0",
+            "Unnamed: 1",
+            "Unnamed: 2",
+            "Unnamed: 3",
+            "Unnamed: 4",
+            "Unnamed: 5",
+            "Unnamed: 6",
+            "Unnamed: 7",
+            "Unnamed: 8",
+            "Unnamed: 9",
+            "Unnamed: 10",
+            "Unnamed: 11",
+            "Unnamed: 12",
+            "Unnamed: 13",
+            "Unnamed: 14",
+            "Unnamed: 15",
+            "Unnamed: 16",
+            "Unnamed: 17"
+          ]
+        },
+        "EIS_data": {
+          "shape": [
+            220,
+            21
+          ],
+          "n_columns": 21,
+          "columns": [
+            "0.5",
+            " A cm-2",
+            "Unnamed: 2",
+            "Unnamed: 3",
+            "Unnamed: 4",
+            "Unnamed: 5",
+            "Unnamed: 6",
+            "Unnamed: 7",
+            "Unnamed: 8",
+            "Unnamed: 9",
+            "Unnamed: 10",
+            "Unnamed: 11",
+            "Unnamed: 12",
+            "Unnamed: 13",
+            "Unnamed: 14",
+            "0.5 A cm-2",
+            "10",
+            "Unnamed: 17",
+            "0.5 A cm-2 JRC",
+            "Unnamed: 19",
+            "Unnamed: 20"
+          ]
+        }
+      }
+    },
+    "pemfc_efficiency_clean.xlsx": {
+      "sheets": {
+        "Notes": {
+          "shape": [
+            32,
+            1
+          ],
+          "n_columns": 1,
+          "columns": [
+            "PEMFC Efficiency Dataset \u2014 Cleaning, Feature Selection & Target Construction Notes"
+          ]
+        },
+        "Assumptions": {
+          "shape": [
+            6,
+            3
+          ],
+          "n_columns": 3,
+          "columns": [
+            "PEMFC Voltage-Efficiency Model \u2014 Assumptions",
+            "Unnamed: 1",
+            "Unnamed: 2"
+          ]
+        },
+        "Clean_Data": {
+          "shape": [
+            14217,
+            15
+          ],
+          "n_columns": 15,
+          "columns": [
+            "current_density_mA_cm2",
+            "cell_voltage_V",
+            "cathode_pressure_diff_kPa",
+            "anode_pressure_diff_kPa",
+            "anode_temp_beginning_C",
+            "anode_temp_middle_C",
+            "anode_temp_end_C",
+            "cathode_temp_beginning_C",
+            "cathode_temp_middle_C",
+            "cathode_temp_end_C",
+            "anode_avg_temp_C",
+            "cathode_avg_temp_C",
+            "cell_avg_temp_C",
+            "reversible_voltage_V",
+            "voltage_efficiency_pct"
+          ]
+        },
+        "Feature_Selection": {
+          "shape": [
+            13,
+            10
+          ],
+          "n_columns": 10,
+          "columns": [
+            "Correlation matrix (Pearson r) \u2014 candidate features vs voltage_efficiency_pct target",
+            "Unnamed: 1",
+            "Unnamed: 2",
+            "Unnamed: 3",
+            "Unnamed: 4",
+            "Unnamed: 5",
+            "Unnamed: 6",
+            "Unnamed: 7",
+            "Unnamed: 8",
+            "Unnamed: 9"
+          ]
+        }
+      }
+    }
+  },
+  "required_term_hits": {
+    "mass": [],
+    "weight": [],
+    "kg": [],
+    "gram": [],
+    "thrust": [],
+    "payload": [],
+    "battery": [],
+    "motor": [],
+    "propeller": [],
+    "prop": [],
+    "frame": [],
+    "endurance": [],
+    "power_density": [],
+    "cell_count": [],
+    "capacity": [],
+    "mah": [],
+    "esc": [],
+    "arm": [],
+    "fuselage": [],
+    "wing": [],
+    "airframe": [],
+    "drone": [],
+    "uav": []
+  },
+  "notes_verbatim": [
+    "PEMFC Efficiency Dataset \u2014 Cleaning, Feature Selection & Target Construction Notes",
+    "1. What was in the raw file ('data' sheet)",
+    "The original sheet had a 3-row stacked header (units / bucket labels / column names) followed by 14,217 raw measurement rows. Far to the right (columns AL onward), a separate ~54-row SUMMARY block sat next to the raw data -- a binned/averaged polarization-curve table, unrelated row-by-row to the main data. Interleaved in the main block were additional pre-computed AVERAGE / VARIATION / DEVIATION / DROP columns (e.g. 'anode average', 'anode variation', 'Cathode pressure drop', 'cathode pressure deviation', the averaged 'Current density'/'Voltage'/'st dev' columns) that only apply to ~60-62 rows out of 14,217 (they belong to the binned summary, not every raw observation).",
+    "2. Columns dropped, and why",
+    "- 'Current density set' (bucket/setpoint label, ~99.6% missing at row level) \u2014 control label, not a physical measurement.",
+    "- 'Current density' (averaged), 'Voltage' (averaged), 'st dev' \u2014 only populated for 61 of 14,217 rows (the binned summary table). Dropped as duplicate/aggregate of the raw current_density and cell_voltage_001 already kept.",
+    "- 'Cathode pressure drop', 'cathode pressure deviation', 'Anode pressure drop', 'anode pressure deviation' \u2014 only populated for 62 of 14,217 rows (same binned summary). Dropped.",
+    "- 'anode average', 'anode variation', 'cathode average', 'cathode variation' \u2014 pre-computed per-row aggregates across the 3 anode/3 cathode temperature sensors. These duplicate what Clean_Data now recomputes transparently as anode_avg_temp_C / cathode_avg_temp_C (formulas, so you can audit/change them), so the originals were dropped to avoid redundant columns.",
+    "- The entire right-hand summary block (~16 columns, ~54 rows) \u2014 a separate binned polarization-curve table, not row-aligned with the raw data. Left out of Clean_Data entirely; can be treated as a separate, much smaller dataset if you ever want a 'binned' version.",
+    "- All fully-blank spacer columns.",
+    "3. Columns kept (raw, per-observation, 0% missing across all 14,217 rows)",
+    "current_density_mA_cm2, cell_voltage_V, cathode_pressure_diff_kPa, anode_pressure_diff_kPa, anode_temp_beginning_C, anode_temp_middle_C, anode_temp_end_C, cathode_temp_beginning_C, cathode_temp_middle_C, cathode_temp_end_C. Engineered on top (formulas, see Clean_Data K:O): anode_avg_temp_C, cathode_avg_temp_C, cell_avg_temp_C, reversible_voltage_V, voltage_efficiency_pct.",
+    "4. Building the missing target: voltage_efficiency_pct",
+    "There is no efficiency column in the source file, so it is derived using PEMFC electrochemical thermodynamics (Nernst / reversible-voltage theory):",
+    "  E_reversible(T) = 1.229 + (-0.00085) x (T_cell - 25)      [V, temperature-corrected reversible/open-circuit voltage, HHV basis]",
+    "  voltage_efficiency_pct = cell_voltage_V / E_reversible x 100",
+    "T_cell is the average of the anode and cathode average temperatures. The two coefficients (1.229 V and -0.00085 V/degC) live in the Assumptions sheet so you can change them in one place and every one of the 14,217 rows recalculates.",
+    "LIMITATION: the sheet only has DIFFERENTIAL pressure (inlet-to-outlet drop across the flow channel), not the ABSOLUTE partial pressure of H2/O2/H2O a full Nernst equation needs. So this is a temperature-only-corrected reversible voltage, and voltage_efficiency_pct is a proxy for true thermodynamic efficiency, not the full Faradaic/overall system efficiency (that would also need H2/air flow rate or stoichiometry, which this file does not contain -- see the synopsis's own attribute list, which includes 'hydrogen consumption/flow rate' as a wanted-but-currently-absent field).",
+    "Sanity check on the computed column: near zero current density, voltage_efficiency_pct sits around 84-86% (typical for real PEMFCs, since activation losses already exist near open-circuit); at the highest current densities (~4900-5080 mA/cm2) it drops to ~22-23% (heavy ohmic + mass-transport losses at high current). This matches expected PEMFC polarization behaviour, which is a good sign the formula is reasonable.",
+    "5. Feature-selection findings (see Feature_Selection sheet)",
+    "- current_density, cathode_pressure_diff, anode_pressure_diff and cell_voltage are all mutually correlated at |r| = 0.97-0.99. Physically this makes sense (drawing more current increases reactant consumption, which increases the flow-channel pressure drop, and simultaneously pulls voltage down along the polarization curve) -- but for modelling it means these four columns carry almost the same single piece of information. Feeding all of them into one model as independent predictors will not add real information, just multicollinearity.",
+    "- The anode/cathode/cell temperatures vary only between about 79.7 degC and 81.5 degC across all 14,217 rows (looks like an isothermal test at a fixed ~80 degC setpoint). Because of that narrow range, temperature's correlation with efficiency in THIS dataset is weak (|r| around 0.04-0.15) -- not because temperature does not matter physically (it does, per the Nernst equation), but because this dataset barely varies it, so there is not enough signal here to let a model learn a temperature effect.",
+    "- cell_voltage_V correlates ~1.00 with voltage_efficiency_pct. That is expected and NOT a useful modelling result: efficiency was constructed as voltage divided by a near-constant reversible voltage, so a model that is handed cell_voltage as an input would just be re-deriving the formula, not learning anything new.",
+    "RECOMMENDATION for the actual ML-modelling session: predict voltage_efficiency_pct from current_density_mA_cm2 (+ temperature, if/when you get more temperature spread) WITHOUT feeding in cell_voltage_V as a predictor -- that keeps the model an honest 'operating-conditions -> efficiency' predictor rather than a circular restatement. Keep cathode/anode pressure diff only as a data-quality sanity check (they should track current density); including them alongside current_density as separate model features is redundant given the ~0.98 correlation.",
+    "6. Is this dataset sufficient? What's missing?",
+    "Sufficient for: Objective 1 (calculating/predicting efficiency from available attributes) and part of Objective 2 (efficiency vs. current density) -- 14,217 clean rows is plenty of volume for a regression/ML model on that relationship.",
+    "NOT sufficient, as-is, for: (a) a genuine temperature effect -- the ~2 degC spread in this file cannot support learning how efficiency changes with operating temperature; you would want additional runs at other temperature setpoints (e.g. 50/65/80 degC) if the synopsis's Stage 2 is meant to say anything about temperature. (b) true overall/Faradaic efficiency -- needs H2 (and ideally air) flow rate or stoichiometry, and absolute stack pressure, neither of which exists in this file; without them you are limited to the voltage-efficiency proxy above. (c) Stages 3-4 of your own synopsis (drone power/weight analysis and weight optimisation) -- this sheet has zero data on fuel-cell mass, cell count, or power density (all listed as required attributes in your synopsis section 4). You will need a second, separate dataset (experimental, literature, or manufacturer datasheets, as your synopsis already proposes) that ties system weight and power density to the same kind of operating data before Stages 3-4 can start."
+  ]
+}

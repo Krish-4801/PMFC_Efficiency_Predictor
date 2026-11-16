@@ -1,0 +1,408 @@
+{
+  "method": "exhaustive enumeration over catalogue components, verified against six metaheuristics",
+  "n_rotors": 4,
+  "usable_battery_fraction": 0.8,
+  "scenarios": {
+    "3inch": {
+      "scenario": "3inch",
+      "scenario_label": "3-inch micro class",
+      "airframe_g": 95.0,
+      "payload_g": 200.0,
+      "endurance_required_min": 8.0,
+      "prop_range_in": [
+        2.5,
+        3.5
+      ],
+      "n_candidates": 12600,
+      "n_feasible": 2889,
+      "exhaustive_time_s": 0.6401815409917617,
+      "global_optimum": {
+        "w_total_g": 460.08534350913004,
+        "twr": 3.0448263996312255,
+        "endurance_min": 8.62249609703827,
+        "hover_current_A": 1.6431619411040361,
+        "violation": 0.0,
+        "feasible": true,
+        "group_idx": 177,
+        "battery_idx": 257,
+        "n_packs": 2,
+        "motor_slug": "t-motor-f1404",
+        "motor_model": "F1404",
+        "motor_mass_g": 9.3,
+        "prop_key": "HQProp 3520",
+        "prop_diameter_in": 3.5,
+        "prop_mass_g": 1.6713358772825133,
+        "cells": 4,
+        "kv": 2900.0,
+        "max_thrust_per_motor_g": 350.22,
+        "battery_model": "RDQ Series 650mAh 4S",
+        "battery_mass_g": 60.6,
+        "battery_energy_wh": 9.9,
+        "battery_capacity_mah": 650.0,
+        "battery_c_rating": "60C",
+        "airframe_g": 95.0,
+        "payload_g": 200.0,
+        "propulsion_mass_g": 43.88534350913005,
+        "battery_total_g": 121.2
+      },
+      "baseline_typical_components": {
+        "w_total_g": 487.7876629075308,
+        "median_motor_mass_g": 9.3,
+        "median_prop_mass_g": 1.8969157268826908,
+        "median_battery_mass_g": 148.0,
+        "definition": "airframe + 4*(median motor + median prop) + 1 median battery + payload",
+        "real_class_auw_plus_payload_g": 453.8,
+        "real_class_n": 35
+      },
+      "baseline_median_feasible": {
+        "w_total_g": 812.8868564741985,
+        "twr": 3.0822493684636503,
+        "endurance_min": 11.121948818956158,
+        "hover_current_A": 5.800946812804694,
+        "violation": 0.0,
+        "feasible": true,
+        "group_idx": 192,
+        "battery_idx": 246,
+        "n_packs": 1,
+        "motor_slug": "t-motor-f1507",
+        "motor_model": "F1507",
+        "motor_mass_g": 15.0,
+        "prop_key": "Gemfan 3052",
+        "prop_diameter_in": 3.0,
+        "prop_mass_g": 3.221714118549615,
+        "cells": 4,
+        "kv": 3800.0,
+        "max_thrust_per_motor_g": 626.38,
+        "battery_model": "RDQ Series 5500mAh 4S",
+        "battery_mass_g": 445.0,
+        "battery_energy_wh": 81.4,
+        "battery_capacity_mah": 5500.0,
+        "battery_c_rating": "70C",
+        "airframe_g": 95.0,
+        "payload_g": 200.0,
+        "propulsion_mass_g": 72.88685647419845,
+        "battery_total_g": 445.0
+      },
+      "reduction_vs_typical_pct": 5.679175900693541,
+      "reduction_vs_median_feasible_pct": 43.40106008052629
+    },
+    "5inch": {
+      "scenario": "5inch",
+      "scenario_label": "5-inch freestyle / cinematic class",
+      "airframe_g": 245.0,
+      "payload_g": 500.0,
+      "endurance_required_min": 10.0,
+      "prop_range_in": [
+        4.5,
+        5.5
+      ],
+      "n_candidates": 46956,
+      "n_feasible": 7218,
+      "exhaustive_time_s": 2.4622438750084257,
+      "global_optimum": {
+        "w_total_g": 1138.5112772193588,
+        "twr": 3.3373758135097655,
+        "endurance_min": 11.259930368497201,
+        "hover_current_A": 2.8798599509539855,
+        "violation": 0.0,
+        "feasible": true,
+        "group_idx": 152,
+        "battery_idx": 3,
+        "n_packs": 1,
+        "motor_slug": "t-motor-2203-5",
+        "motor_model": "2203.5",
+        "motor_mass_g": 19.7,
+        "prop_key": "Gemfan 5125",
+        "prop_diameter_in": 5.1,
+        "prop_mass_g": 4.427819304839669,
+        "cells": 6,
+        "kv": 1500.0,
+        "max_thrust_per_motor_g": 949.91,
+        "battery_model": "3000mAh 6S",
+        "battery_mass_g": 297.0,
+        "battery_energy_wh": 64.8,
+        "battery_capacity_mah": 3000.0,
+        "battery_c_rating": "10C",
+        "airframe_g": 245.0,
+        "payload_g": 500.0,
+        "propulsion_mass_g": 96.51127721935867,
+        "battery_total_g": 297.0
+      },
+      "baseline_typical_components": {
+        "w_total_g": 1071.9112772193587,
+        "median_motor_mass_g": 33.8,
+        "median_prop_mass_g": 4.427819304839669,
+        "median_battery_mass_g": 174.0,
+        "definition": "airframe + 4*(median motor + median prop) + 1 median battery + payload",
+        "real_class_auw_plus_payload_g": 1154.0,
+        "real_class_n": 17
+      },
+      "baseline_median_feasible": {
+        "w_total_g": 1668.5647928416793,
+        "twr": 3.7565217885996325,
+        "endurance_min": 14.415981988349646,
+        "hover_current_A": 4.390959981162314,
+        "violation": 0.0,
+        "feasible": true,
+        "group_idx": 98,
+        "battery_idx": 92,
+        "n_packs": 3,
+        "motor_slug": "iflight-xing-e-pro-2207",
+        "motor_model": "Xing-E PRO 2207",
+        "motor_mass_g": 33.8,
+        "prop_key": "5043",
+        "prop_diameter_in": 5.0,
+        "prop_mass_g": 4.341198210419805,
+        "cells": 6,
+        "kv": 1800.0,
+        "max_thrust_per_motor_g": 1567.0,
+        "battery_model": "Gaoneng 1850mAh 6S",
+        "battery_mass_g": 257.0,
+        "battery_energy_wh": 42.2,
+        "battery_capacity_mah": 1850.0,
+        "battery_c_rating": "120C",
+        "airframe_g": 245.0,
+        "payload_g": 500.0,
+        "propulsion_mass_g": 152.5647928416792,
+        "battery_total_g": 771.0
+      },
+      "reduction_vs_typical_pct": -6.213200795197058,
+      "reduction_vs_median_feasible_pct": 31.767032236105333
+    },
+    "7inch": {
+      "scenario": "7inch",
+      "scenario_label": "7-inch long-range / heavy-lift class",
+      "airframe_g": 450.0,
+      "payload_g": 750.0,
+      "endurance_required_min": 12.0,
+      "prop_range_in": [
+        6.5,
+        7.5
+      ],
+      "n_candidates": 8229,
+      "n_feasible": 285,
+      "exhaustive_time_s": 0.4422017080069054,
+      "global_optimum": {
+        "w_total_g": 1715.739896589409,
+        "twr": 4.934430922093335,
+        "endurance_min": 12.413269882428834,
+        "hover_current_A": 2.586315691178636,
+        "violation": 0.0,
+        "feasible": true,
+        "group_idx": 215,
+        "battery_idx": 3,
+        "n_packs": 1,
+        "motor_slug": "t-motor-f90-2806-5",
+        "motor_model": "F90 2806.5",
+        "motor_mass_g": 46.6,
+        "prop_key": "Gemfan 7042",
+        "prop_diameter_in": 7.0,
+        "prop_mass_g": 8.08497414735224,
+        "cells": 6,
+        "kv": 1300.0,
+        "max_thrust_per_motor_g": 2116.55,
+        "battery_model": "3000mAh 6S",
+        "battery_mass_g": 297.0,
+        "battery_energy_wh": 64.8,
+        "battery_capacity_mah": 3000.0,
+        "battery_c_rating": "10C",
+        "airframe_g": 450.0,
+        "payload_g": 750.0,
+        "propulsion_mass_g": 218.73989658940897,
+        "battery_total_g": 297.0
+      },
+      "baseline_typical_components": {
+        "w_total_g": 1642.539896589409,
+        "median_motor_mass_g": 54.3,
+        "median_prop_mass_g": 8.08497414735224,
+        "median_battery_mass_g": 193.0,
+        "definition": "airframe + 4*(median motor + median prop) + 1 median battery + payload",
+        "real_class_auw_plus_payload_g": 2647.5,
+        "real_class_n": 2
+      },
+      "baseline_median_feasible": {
+        "w_total_g": 2198.739896589409,
+        "twr": 4.29447794832245,
+        "endurance_min": 12.6101477990632,
+        "hover_current_A": 4.057804895806841,
+        "violation": 0.0,
+        "feasible": true,
+        "group_idx": 216,
+        "battery_idx": 54,
+        "n_packs": 3,
+        "motor_slug": "t-motor-f90-2806-5",
+        "motor_model": "F90 2806.5",
+        "motor_mass_g": 46.6,
+        "prop_key": "HQProp 7040.3",
+        "prop_diameter_in": 7.0,
+        "prop_mass_g": 8.08497414735224,
+        "cells": 6,
+        "kv": 1300.0,
+        "max_thrust_per_motor_g": 2360.61,
+        "battery_model": "1550mAh 6S",
+        "battery_mass_g": 260.0,
+        "battery_energy_wh": 34.4,
+        "battery_capacity_mah": 1550.0,
+        "battery_c_rating": "150C",
+        "airframe_g": 450.0,
+        "payload_g": 750.0,
+        "propulsion_mass_g": 218.73989658940897,
+        "battery_total_g": 780.0
+      },
+      "reduction_vs_typical_pct": -4.456512755153983,
+      "reduction_vs_median_feasible_pct": 21.967127660220697
+    }
+  },
+  "sensitivity": [
+    {
+      "parameter": "baseline",
+      "value": NaN,
+      "optimum_g": 1138.5112772193588,
+      "feasible": true
+    },
+    {
+      "parameter": "min_twr",
+      "value": 1.5,
+      "optimum_g": 1138.5112772193588,
+      "feasible": true
+    },
+    {
+      "parameter": "min_twr",
+      "value": 1.75,
+      "optimum_g": 1138.5112772193588,
+      "feasible": true
+    },
+    {
+      "parameter": "min_twr",
+      "value": 2.0,
+      "optimum_g": 1138.5112772193588,
+      "feasible": true
+    },
+    {
+      "parameter": "min_twr",
+      "value": 2.25,
+      "optimum_g": 1138.5112772193588,
+      "feasible": true
+    },
+    {
+      "parameter": "min_twr",
+      "value": 2.5,
+      "optimum_g": 1138.5112772193588,
+      "feasible": true
+    },
+    {
+      "parameter": "min_twr",
+      "value": 3.0,
+      "optimum_g": 1138.5112772193588,
+      "feasible": true
+    },
+    {
+      "parameter": "endurance_min",
+      "value": 5.0,
+      "optimum_g": 979.5112772193587,
+      "feasible": true
+    },
+    {
+      "parameter": "endurance_min",
+      "value": 8.0,
+      "optimum_g": 1048.5112772193588,
+      "feasible": true
+    },
+    {
+      "parameter": "endurance_min",
+      "value": 10.0,
+      "optimum_g": 1138.5112772193588,
+      "feasible": true
+    },
+    {
+      "parameter": "endurance_min",
+      "value": 12.0,
+      "optimum_g": 1141.5112772193588,
+      "feasible": true
+    },
+    {
+      "parameter": "endurance_min",
+      "value": 15.0,
+      "optimum_g": 1291.5112772193588,
+      "feasible": true
+    },
+    {
+      "parameter": "endurance_min",
+      "value": 20.0,
+      "optimum_g": 1775.7112772193586,
+      "feasible": true
+    },
+    {
+      "parameter": "endurance_min",
+      "value": 25.0,
+      "optimum_g": 2154.7112772193586,
+      "feasible": true
+    },
+    {
+      "parameter": "payload_kg",
+      "value": 0.0,
+      "optimum_g": 473.7112772193587,
+      "feasible": true
+    },
+    {
+      "parameter": "payload_kg",
+      "value": 0.25,
+      "optimum_g": 741.5112772193587,
+      "feasible": true
+    },
+    {
+      "parameter": "payload_kg",
+      "value": 0.5,
+      "optimum_g": 1138.5112772193588,
+      "feasible": true
+    },
+    {
+      "parameter": "payload_kg",
+      "value": 0.75,
+      "optimum_g": 1449.1718271861698,
+      "feasible": true
+    },
+    {
+      "parameter": "payload_kg",
+      "value": 1.0,
+      "optimum_g": 1791.5112772193588,
+      "feasible": true
+    },
+    {
+      "parameter": "payload_kg",
+      "value": 1.5,
+      "optimum_g": 2478.7112772193586,
+      "feasible": true
+    },
+    {
+      "parameter": "airframe_scale",
+      "value": 0.7,
+      "optimum_g": 1017.0112772193587,
+      "feasible": true
+    },
+    {
+      "parameter": "airframe_scale",
+      "value": 0.85,
+      "optimum_g": 1053.7612772193588,
+      "feasible": true
+    },
+    {
+      "parameter": "airframe_scale",
+      "value": 1.0,
+      "optimum_g": 1138.5112772193588,
+      "feasible": true
+    },
+    {
+      "parameter": "airframe_scale",
+      "value": 1.15,
+      "optimum_g": 1175.2612772193588,
+      "feasible": true
+    },
+    {
+      "parameter": "airframe_scale",
+      "value": 1.3,
+      "optimum_g": 1212.0112772193588,
+      "feasible": true
+    }
+  ]
+}
